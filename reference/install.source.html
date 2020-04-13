@@ -117,7 +117,13 @@
     <p>Install package from source</p>
     </div>
 
-    <pre class="usage"><span class='fu'>install.source</span>(<span class='no'>pkg_vrs</span>, <span class='no'>lib</span>, <span class='no'>date</span>, <span class='kw'>force.download</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>install.source</span>(
+  <span class='no'>pkg_vrs</span>,
+  <span class='no'>lib</span>,
+  <span class='no'>date</span>,
+  <span class='kw'>force.download</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>quiet.install</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -142,8 +148,9 @@ containing the package source code already exists locally, should it be
 downloaded again?</p></td>
     </tr>
     <tr>
-      <th>quiet</th>
-      <td><p>logical: if true, reduce the amount of output.</p></td>
+      <th>quiet.install</th>
+      <td><p>Logical (defaults to <code>TRUE</code>).Run <code><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages()</a></code>
+with <code>quiet = TRUE</code>?</p></td>
     </tr>
     </table>
 
