@@ -176,13 +176,16 @@ of date.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Invisible <code>NULL</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='get.snowball.html'>get.snowball()</a></code> to determine in which order packages are installed</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'>install.snowball</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in install.snowball("magrittr", "2018-02-12"): could not find function "install.snowball"</span></div><div class='input'># }
+<span class='fu'>install.snowball</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, <span class='kw'>include.suggests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='error'>Error in install.snowball("magrittr", "2018-02-12", include.suggests = FALSE): could not find function "install.snowball"</span></div><div class='input'># }
 
 </div></pre>
   </div>

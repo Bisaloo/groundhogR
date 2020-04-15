@@ -90,7 +90,7 @@
 <li>The version of the package available on that day, is automatically installed if needed</li>
 <li>All dependencies for that package are installed as available that day.</li>
 </ul>
-<p>GroundhogR allows having multiple (possibly all) versions of a package available, and loading whichever one is wanted. For an older project you work with an older version of a package to ensure reproducibility, while for a new project you work with a newer version.</p>
+<p>groundhogR allows having multiple (possibly all) versions of a package available, and loading whichever one is wanted. For an older project you work with an older version of a package to ensure reproducibility, while for a new project you work with a newer version.</p>
 <p>For example, to work with the package rio as it was available on 2017-09-15 instead of</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rio"</span>)</pre></body></html></div>
 <p>you run</p>
@@ -180,11 +180,11 @@ C:\Users\mike\Documents\groundhogR\R-3.6.2\rio_0.5.1</code></pre>
 <p>Lack of feedback on errors to debug</p>
 <p>When checkpoint fails to install a package it does not provide feedback on how to correct the problem. For example, the package igraph_0.7 (with over 500 reverse dependencies), will not install in R version 3.5.0 or higher. To run a script that depends on it, one must use an older versions of R which will allow igraph 0.7 to be installed.</p>
 <p>But, the only feedback checkpoint provides a user that attempts to install igraph 0.7 in a newer version of R is that the package failed to load (and therefore so would the 500+ packages that depend on it, or those that depend on those packages, etc.).</p>
-<p>{groundhogR} tells users which R version is needed to run igraph 0.7 (or any package that fails to install), and gives instructions for installing and running older R.</p>
+<p>groundhogR tells users which R version is needed to run igraph 0.7 (or any package that fails to install), and gives instructions for installing and running older R.</p>
 </li>
 <li>
 <p>Multiple identical installations</p>
-<p>Checkpoint starts an empty package library for every project, leading to new installations of every package needed for every project. If the same package is used for 20 scripts, it is installed 20 times by Checkpoint, and 20 copies are permanently stored.</p>
+<p>checkpoint starts an empty package library for every project, leading to new installations of every package needed for every project. If the same package is used for 20 scripts, it is installed 20 times byccheckpoint, and 20 copies are permanently stored.</p>
 <p>groundhogR uses a single comprehensive library that has no duplicate package installs.</p>
 </li>
 <li>
