@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>8  Final function:   groundhog.library() — groundhog.library • groundhogR</title>
+<title>Set groundhogR folder location — set.groundhogr.folder • groundhogR</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="8  Final function:   groundhog.library() — groundhog.library" />
-<meta property="og:description" content="8  Final function:   groundhog.library()" />
+<meta property="og:title" content="Set groundhogR folder location — set.groundhogr.folder" />
+<meta property="og:description" content="Set groundhogR folder location" />
 
 
 
@@ -111,82 +111,42 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>8  Final function:   groundhog.library()</h1>
-    <small class="dont-index">Source: <a href='https://github.com/bisaloo/groundhogR/blob/master/R/groundhog.library.R'><code>R/groundhog.library.R</code></a></small>
-    <div class="hidden name"><code>groundhog.library.Rd</code></div>
+    <h1>Set groundhogR folder location</h1>
+    <small class="dont-index">Source: <a href='https://github.com/bisaloo/groundhogR/blob/master/R/get.groundhogr.folder.R'><code>R/get.groundhogr.folder.R</code></a></small>
+    <div class="hidden name"><code>set.groundhogr.folder.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>8  Final function:   groundhog.library()</p>
+    <p>Set groundhogR folder location</p>
     </div>
 
-    <pre class="usage"><span class='fu'>groundhog.library</span>(
-  <span class='no'>pkg</span>,
-  <span class='no'>date</span>,
-  <span class='kw'>quiet.install</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>plot.console</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>include.suggests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>current.deps</span> <span class='kw'>=</span> <span class='st'>"Rcpp"</span>,
-  <span class='kw'>ignore.package.conflicts</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>force.source</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>force.install</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>set.groundhogr.folder</span>(<span class='no'>path</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>pkg</th>
-      <td><p>character. Name of the package to install</p></td>
-    </tr>
-    <tr>
-      <th>date</th>
-      <td><p>date (in the format "%Y-%m-%d"), Required date for the package.</p></td>
-    </tr>
-    <tr>
-      <th>quiet.install</th>
-      <td><p>Logical (defaults to <code>TRUE</code>).Run <code><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages()</a></code>
-with <code>quiet = TRUE</code>?</p></td>
-    </tr>
-    <tr>
-      <th>plot.console</th>
-      <td><p>logical (defaults to <code>TRUE</code>). Should detailed feedback
-about the installation process be printed in the plot console.</p></td>
-    </tr>
-    <tr>
-      <th>include.suggests</th>
-      <td><p>Logical (defaults to <code>FALSE</code>. Should suggested
-packages be installed?</p></td>
-    </tr>
-    <tr>
-      <th>current.deps</th>
-      <td><p>Dependencies that will install current version regardless
-of date.</p></td>
-    </tr>
-    <tr>
-      <th>ignore.package.conflicts</th>
-      <td><p>Logical (defaults to <code>FALSE</code>). With <code>TRUE</code>,
-if an already attached package will be installed, it is detached, but all
-depednecies are left installed. With default, <code>FALSE</code>, script stops and
-asks for session restart.</p></td>
-    </tr>
-    <tr>
-      <th>force.source</th>
-      <td><p>Logical (defaults to <code>FALSE</code>). If <code>TRUE</code>,` will skip CRAN
-and MRAN attempts, download tar.gz, and install from it.</p></td>
-    </tr>
-    <tr>
-      <th>force.install</th>
-      <td><p>Logical (defaults to <code>FALSE</code>). If <code>TRUE</code>, even if
-package is found for this R-build, it will reinstall it.</p></td>
+      <th>path</th>
+      <td><p>Character. The path to the groundhogR folder where groundhogR
+files will be stored and where packages loaded with <code><a href='groundhog.library.html'>groundhog.library()</a></code>
+will be installed.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
+
+    <p>This setting can also be achieved by manually editing the <code>.Renviron</code>
+file. You can set this globally by editing <code>~/.Renviron</code> or only for a
+specific project by editing the <code>.Renviron</code> file at the root of your
+project.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='get.groundhogr.folder.html'>get.groundhogr.folder()</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>groundhog.library</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>)</div><div class='output co'>#&gt; <span class='message'>groundhogR needs to save files on your computer to run.</span>
-#&gt; <span class='message'>It looks you haven't specified a folder for groundhogR yet.</span></div><div class='output co'>#&gt; Would you like to use '~/groundhogR' to save files? If so, type 'yes' or just press 'Enter': </div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open file '/Users/runner/.Renviron': No such file or directory</span></div><div class='output co'>#&gt; <span class='error'>Error in file(con, "r"): cannot open the connection</span></div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'>set.groundhogr.folder</span>()
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
