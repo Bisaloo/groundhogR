@@ -124,7 +124,6 @@
   <span class='no'>pkg</span>,
   <span class='no'>date</span>,
   <span class='kw'>quiet.install</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>plot.console</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>include.suggests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
   <span class='kw'>current.deps</span> <span class='kw'>=</span> <span class='st'>"Rcpp"</span>,
   <span class='kw'>ignore.package.conflicts</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
@@ -147,11 +146,6 @@
       <th>quiet.install</th>
       <td><p>Logical (defaults to <code>TRUE</code>).Run <code><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages()</a></code>
 with <code>quiet = TRUE</code>?</p></td>
-    </tr>
-    <tr>
-      <th>plot.console</th>
-      <td><p>logical (defaults to <code>TRUE</code>). Should detailed feedback
-about the installation process be printed in the plot console.</p></td>
     </tr>
     <tr>
       <th>include.suggests</th>
@@ -200,8 +194,7 @@ with their version number, under the format <code>pkg_vrs</code>.</p>
 #&gt; <span class='message'>Regardless of your choice, this warning will not appear again within the next hour</span></div><div class='output co'>#&gt; <span class='message'>Type 'Q', 'quit' or 'stop' to stop the script.</span>
 #&gt; <span class='message'>Anything else to continue</span></div><div class='output co'>#&gt; </div><div class='output co'>#&gt; <span class='message'>You typed '' the script continues...</span></div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open URL 'https://groundhogR.com/cran.times.rds': HTTP status was '406 Not Acceptable'</span></div><div class='output co'>#&gt; Error in download.file(paste0(groundhogR.url, "cran.times.rds"), times.path) : 
 #&gt;   cannot open URL 'https://groundhogR.com/cran.times.rds'</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open URL 'https://groundhogR.com/cran.toc.rds': HTTP status was '406 Not Acceptable'</span></div><div class='output co'>#&gt; Error in download.file(paste0(groundhogR.url, "cran.toc.rds"), toc.path) : 
-#&gt;   cannot open URL 'https://groundhogR.com/cran.toc.rds'</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open compressed file '/Users/runner/groundhogR/cran.times.rds', probable reason 'No such file or directory'</span></div><div class='output co'>#&gt; <span class='error'>Error in gzfile(file, "rb"): cannot open the connection</span></div><div class='input'>
-</div></pre>
+#&gt;   cannot open URL 'https://groundhogR.com/cran.toc.rds'</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open compressed file '/Users/runner/groundhogR/cran.times.rds', probable reason 'No such file or directory'</span></div><div class='output co'>#&gt; <span class='error'>Error in gzfile(file, "rb"): cannot open the connection</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
