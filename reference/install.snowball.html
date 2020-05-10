@@ -179,8 +179,11 @@ of date.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='kw pkg'>groundhogR</span><span class='kw ns'>:::</span><span class='fu'>install.snowball</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, <span class='kw'>include.suggests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='co'># }</span></div></pre>
+<span class='kw pkg'>groundhogR</span><span class='kw ns'>:::</span><span class='fu'>install.snowball</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, <span class='kw'>include.suggests</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open URL 'https://groundhogR.com/cran.times.rds': HTTP status was '406 Not Acceptable'</span></div><div class='output co'>#&gt; Error in download.file(paste0(groundhogR.url, "cran.times.rds"), times.path) : 
+#&gt;   cannot open URL 'https://groundhogR.com/cran.times.rds'</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open URL 'https://groundhogR.com/cran.toc.rds': HTTP status was '406 Not Acceptable'</span></div><div class='output co'>#&gt; Error in download.file(paste0(groundhogR.url, "cran.toc.rds"), toc.path) : 
+#&gt;   cannot open URL 'https://groundhogR.com/cran.toc.rds'</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot open compressed file '/Users/runner/groundhogR/cran.times.rds', probable reason 'No such file or directory'</span></div><div class='output co'>#&gt; <span class='error'>Error in gzfile(file, "rb"): cannot open the connection</span></div><div class='input'># }
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
