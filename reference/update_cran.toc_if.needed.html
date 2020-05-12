@@ -140,7 +140,7 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='kw pkg'>groundhogR</span><span class='kw ns'>:::</span><span class='fu'>update_cran.toc_if.needed</span>(<span class='st'>"2020-03-01"</span>)</div><div class='output co'>#&gt; [1] FALSE</div><div class='input'># }
+<span class='kw pkg'>groundhogR</span><span class='kw ns'>:::</span><span class='fu'>update_cran.toc_if.needed</span>(<span class='st'>"2020-03-01"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in if (max.date &lt; date) {    message2()    message1("The date you entered, '", format(date), "', requires updating the cran.toc.rds file  with the list of CRAN package-versions, \n",         " for it goes only until ", format(max.date), ". That file is being updated now.")    return(load.cran.toc(TRUE))}: missing value where TRUE/FALSE needed</span></div><div class='input'># }
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
