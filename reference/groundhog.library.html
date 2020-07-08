@@ -155,14 +155,15 @@ packages be installed?</p></td>
     </tr>
     <tr>
       <th>current.deps</th>
-      <td><p>Dependencies that will install current version regardless
-of date.</p></td>
+      <td><p>Character or character vector listing all packages for
+which the installed version will be the latest version available when your
+<span style="R">R</span> version came out, regardless of the value for <code>date</code>.</p></td>
     </tr>
     <tr>
       <th>ignore.package.conflicts</th>
       <td><p>Logical (defaults to <code>FALSE</code>). With <code>TRUE</code>,
 if an already attached package will be installed, it is detached, but all
-depednecies are left installed. With default, <code>FALSE</code>, script stops and
+dependencies are left installed. With default, <code>FALSE</code>, script stops and
 asks for session restart.</p></td>
     </tr>
     <tr>
@@ -183,7 +184,10 @@ package is found for this R-build, it will reinstall it.</p></td>
 with their version number, under the format <code>pkg_vrs</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/groundhogR/man/groundhog.library.html'>groundhog.library</a></span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in if (r.using.k &lt; r.need.k) {    message2()    message("You are using R-", rv$r.using.full, " and the current R version for the data you entered:",         "'", date, "' was R-", rv$r.need.full, ".\n", "To ensure reproducibility you must use groundhog.library() with a version of R ",         "that is as least\nas recent as the entered date (i.e., R&gt;=",         rv$r.need.full, ")\n", "\n\n   ----------------- Package '",         pkg, "' NOT LOADED ----------------")    exit()}: missing value where TRUE/FALSE needed</span></div></pre>
+    <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'><a href='https://rdrr.io/pkg/groundhogR/man/groundhog.library.html'>groundhog.library</a></span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>)
+}
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
