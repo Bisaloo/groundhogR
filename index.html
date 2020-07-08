@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reproducible R Scripts Via Version-Specific CRAN-Package Storing and Loading  • groundhogR</title>
+<title>Reproducible R Scripts via Version-Specific CRAN-Package Storing and Loading  • groundhogR</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Reproducible R Scripts Via Version-Specific CRAN-Package Storing and Loading ">
+<script src="pkgdown.js"></script><meta property="og:title" content="Reproducible R Scripts via Version-Specific CRAN-Package Storing and Loading ">
 <meta property="og:description" content="Make R scripts that rely on packages reproducible by ensuring that
     every time a given script is run, the same version of the used packages are
     loaded (instead of whichever version the user running the script happens to
@@ -84,31 +84,43 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>groundhogR has not yet been released on CRAN and must be installed from GitHub:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("remotes")</span>
-<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"bisaloo/groundhogR"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="co"># install.packages("remotes")</span>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"bisaloo/groundhogR"</span>)
+</pre></div>
 </div>
 <div id="example-1---recovering-broken-code-with-backwards-incompatible-change-in-dplyr" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example-1---recovering-broken-code-with-backwards-incompatible-change-in-dplyr" class="anchor"></a>Example 1 - Recovering broken code with backwards incompatible change in dplyr</h2>
 <p>With version 0.5, <a href="https://dplyr.tidyverse.org/">dplyr</a> changed how the <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>distinct</code></a> function worked, leading to dropped variables:</p>
 <p>Say you have data with repeat values of <code>x</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="no">df1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-  <span class="kw">x1</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>),
-  <span class="kw">x2</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
-)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="kw">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
+  x1 = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>),
+  x2 = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
+)
+</pre></div>
 <p>To drop repeated rows you can use the package dplyr and run:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu">distinct</span>(<span class="no">df1</span>, <span class="no">x1</span>)</pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="kw">dplyr</span>::<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) 
+</pre></div>
 <p>The problem is that in June 2016, the function <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>dplyr::distinct()</code></a> was modified in a non backwards-compatible way. Up to that date it would keep all variables but, afterward the SAME function drops all other variables, The same line of code, run in the same computer, on the same date, has one effect before june 2016 vs after.</p>
 <p>With groundhogR the script tells us which version of dplyr to use keeping the same results:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">groundhogR</span>)
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://groundhogr.com">groundhogR</a></span>)
 <span class="co"># if before the change, then both variables are kept</span>
-<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="st">"2016-06-22"</span>)</pre></div>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="fu">distinct</span>(<span class="no">df1</span>, <span class="no">x1</span>)</pre></div>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="co"># if after the change, only x1 is kept</span>
+<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>, date = <span class="st">"2016-06-22"</span>)
+</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) 
+</pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="co"># if after the change, only x1 is kept</span>
 <span class="co">#Now as it was two days after </span>
 <span class="co">#IMPORTANT: since another version of dplyr is loaded, we do CTRL-SHIFT-F10 to restart the R Session and load the newer version</span>
-<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>,<span class="kw">date</span> <span class="kw">=</span> <span class="st">"2016-06-26"</span>)
-<span class="fu">distinct</span>(<span class="no">df1</span>, <span class="no">x1</span>)</pre></div>
+<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>,date = <span class="st">"2016-06-26"</span>)
+<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) 
+</pre></div>
 </div>
 </div>
   </div>

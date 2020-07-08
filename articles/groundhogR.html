@@ -67,7 +67,7 @@
 
       
 
-      </header><div class="row">
+      </header><script src="groundhogR_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>groundhogR</h1>
@@ -92,11 +92,17 @@
 </ul>
 <p>groundhogR allows having multiple (possibly all) versions of a package available, and loading whichever one is wanted. For an older project you work with an older version of a package to ensure reproducibility, while for a new project you work with a newer version.</p>
 <p>For example, to work with the package rio as it was available on 2017-09-15 instead of</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rio"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rio"</span>)
+</pre></div>
 <p>you run</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2017-09-15"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2017-09-15"</span>)
+</pre></div>
 <p>Even on the same script (<code>.R</code> file) you can switch which version you use, like this:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2019-01-27"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2019-01-27"</span>)
+</pre></div>
 </div>
 <div id="recommended-uses" class="section level1">
 <h1 class="hasAnchor">
@@ -106,15 +112,17 @@
 <a href="#use-1-writing-new-r-scripts" class="anchor"></a>USE 1: Writing new R scripts</h2>
 <p>When working on new scripts, unless you have a reason not to, choose a date for the whole script and stick to it. Maybe the date when the project was started. It makes sense to set the date as a variable you can call though your script. You can give that variable any name, perhaps <code>groundhog.day</code> makes sense.</p>
 <p>So the top of your reproducible R scripts will look something like this:</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="co">####   Written in R Version 3.6.1 - ####</span>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+<span class="co">####   Written in R Version 3.6.1 - ####</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"groundhogR"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://groundhogr.com">"groundhogR"</a></span>)
 
-<span class="no">groundhog.date</span> <span class="kw">&lt;-</span> <span class="st">"2019-04-21"</span>
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="no">groundhog.day</span>)
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"pwr"</span>, <span class="kw">date</span> <span class="kw">=</span> <span class="no">groundhog.day</span>)
+<span class="kw">groundhog.date</span> <span class="op">&lt;-</span> <span class="st">"2019-04-21"</span>
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, date = <span class="kw">groundhog.day</span>)
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"pwr"</span>, date = <span class="kw">groundhog.day</span>)
 
-<span class="co"># &lt;your code&gt;</span></pre></body></html></div>
+<span class="co"># &lt;your code&gt;</span>
+</pre></div>
 </div>
 <div id="use-2-revive-existing-scripts" class="section level2">
 <h2 class="hasAnchor">
@@ -123,10 +131,14 @@
 <p>To recover a non-working script replace its <code>library()</code> statements, with <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code> ones, trying older dates until the script works again.</p>
 <p>You can start setting the date to the date when the script you are reviving was last saved. If that does not work, roll back the clock further (and possibly separately for each package in the script).</p>
 <p>This process is facilitated by knowing when a package had a version change. Use <code><a href="../reference/toc.html">groundhogR::toc()</a></code> to get the table of contents, like this:</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="kw pkg">groundhogR</span><span class="kw ns">::</span><span class="fu"><a href="../reference/toc.html">toc</a></span>(<span class="st">"rio"</span>)
-<span class="kw pkg">groundhogR</span><span class="kw ns">::</span><span class="fu"><a href="../reference/toc.html">toc</a></span>(<span class="st">"pwr"</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="kw">groundhogR</span>::<span class="fu"><a href="../reference/toc.html">toc</a></span>(<span class="st">"rio"</span>)
+<span class="kw">groundhogR</span>::<span class="fu"><a href="../reference/toc.html">toc</a></span>(<span class="st">"pwr"</span>)
+</pre></div>
 <p>To get a single set with all relevant changes worth trying:</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="kw pkg">groundhogR</span><span class="kw ns">::</span><span class="fu"><a href="../reference/cross.toc.html">cross.toc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="kw">groundhogR</span>::<span class="fu"><a href="../reference/cross.toc.html">cross.toc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span>))
+</pre></div>
 </div>
 <div id="use-3-document-changes-in-packages" class="section level2">
 <h2 class="hasAnchor">
