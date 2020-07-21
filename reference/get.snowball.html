@@ -120,7 +120,7 @@
     <p>Generates dataframe with all dependencies needed to install a package, with version and source of installation</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/pkg/groundhogR/man/get.snowball.html'>get.snowball</a></span>(
+    <pre class="usage"><span class='fu'>get.snowball</span>(
   <span class='kw'>pkg</span>,
   <span class='kw'>date</span>,
   include.suggests = <span class='fl'>FALSE</span>,
@@ -160,8 +160,8 @@ released, rather than the value of <code>date</code>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='kw'>groundhogR</span>:::<span class='fu'><a href='https://rdrr.io/pkg/groundhogR/man/get.snowball.html'>get.snowball</a></span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, current.deps = <span class='kw'>NULL</span>)</div><div class='output co'>#&gt;               pkg vrs      pkg_vrs installed from  MRAN.date installation.time
-#&gt; magrittr magrittr 1.5 magrittr_1.5     FALSE CRAN 2020-06-29                42
+<span class='kw'>groundhogR</span>:::<span class='fu'>get.snowball</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, current.deps = <span class='kw'>NULL</span>)</div><div class='output co'>#&gt;               pkg vrs      pkg_vrs installed from  MRAN.date installation.time
+#&gt; magrittr magrittr 1.5 magrittr_1.5     FALSE CRAN 2020-07-05                42
 #&gt;                                      installation.path
 #&gt; magrittr /Users/runner/groundhogR/R-4.0.2/magrittr_1.5</div><div class='input'><span class='co'># }</span>
 </div></pre>

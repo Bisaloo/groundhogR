@@ -122,7 +122,7 @@ which dependencies are installed doesn't generate conflicts." />
 which dependencies are installed doesn't generate conflicts.</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://rdrr.io/pkg/groundhogR/man/install.snowball.html'>install.snowball</a></span>(
+    <pre class="usage"><span class='fu'>install.snowball</span>(
   <span class='kw'>pkg</span>,
   <span class='kw'>date</span>,
   <span class='kw'>include.suggests</span>,
@@ -177,15 +177,15 @@ released, rather than the value of <code>date</code>.</p></td>
     <p>Invisible <code>NULL</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/groundhogR/man/get.snowball.html'>get.snowball()</a></code> to determine in which order packages are installed</p></div>
+    <div class='dont-index'><p><code><a href='get.snowball.html'>get.snowball()</a></code> to determine in which order packages are installed</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='kw'>groundhogR</span>:::<span class='fu'><a href='https://rdrr.io/pkg/groundhogR/man/install.snowball.html'>install.snowball</a></span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, include.suggests = <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='message'></span>
+<span class='kw'>groundhogR</span>:::<span class='fu'>install.snowball</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, include.suggests = <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'></span>
-#&gt; <span class='message'>groundhog.library(), says [using R-4.0.2]: Installing 'magrittr_1.5', package #1 out of 1 needed for 'magrittr_1.5'</span></div><div class='output co'>#&gt; <span class='message'>&gt; The time now is 15:10, and we quite roughly estimate the  process to end around 15:10</span>
-#&gt; <span class='message'>&gt; It is unlikely to finish after 15:10</span>
+#&gt; <span class='message'>groundhog.library(), says [using R-4.0.2]: Installing 'magrittr_1.5', package #1 out of 1 needed for 'magrittr_1.5'</span></div><div class='output co'>#&gt; <span class='message'>&gt; The time now is 12:46, and we quite roughly estimate the  process to end around 12:46</span>
+#&gt; <span class='message'>&gt; It is unlikely to finish after 12:46</span>
 #&gt; <span class='message'>&gt; These estimates will be revised after each package installs,</span>
 #&gt; <span class='message'>  but they will remain noisy estimates.&gt; Installation is slow because you are using R-4.0.2</span>
 #&gt; <span class='message'>&gt; If you run this script with the R version available on the date you entered: '2018-02-12', i.e., R-3.4.3,</span>
