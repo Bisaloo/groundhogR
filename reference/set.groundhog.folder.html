@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Set groundhogR folder location — set.groundhog.folder • groundhogR</title>
+<title>Set groundhog folder location — set.groundhog.folder • groundhog</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Set groundhogR folder location — set.groundhog.folder" />
-<meta property="og:description" content="Set groundhogR folder location" />
+<meta property="og:title" content="Set groundhog folder location — set.groundhog.folder" />
+<meta property="og:description" content="Set groundhog folder location" />
 
 
 
@@ -71,7 +71,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">groundhogR</a>
+        <a class="navbar-link" href="../index.html">groundhog</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
@@ -85,10 +85,19 @@
   </a>
 </li>
 <li>
-  <a href="../articles/groundhogR.html">Get started</a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/groundhogR.html">groundhogR</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -111,13 +120,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Set groundhogR folder location</h1>
+    <h1>Set groundhog folder location</h1>
     <small class="dont-index">Source: <a href='https://github.com/groundhogR/groundhogR/blob/master/R/get.groundhog.folder.R'><code>R/get.groundhog.folder.R</code></a></small>
     <div class="hidden name"><code>set.groundhog.folder.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Set groundhogR folder location</p>
+    <p>Set groundhog folder location</p>
     </div>
 
     <pre class="usage"><span class='fu'>set.groundhog.folder</span>(<span class='kw'>path</span>)</pre>
@@ -127,7 +136,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>path</th>
-      <td><p>Character. The path to the groundhogR folder where groundhogR
+      <td><p>Character. The path to the groundhog folder where groundhog
 files will be stored and where packages loaded with <code><a href='groundhog.library.html'>groundhog.library()</a></code>
 will be installed.</p></td>
     </tr>
@@ -148,7 +157,7 @@ project.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>set.groundhog.folder</span>(<span class='st'>"~/.groundhogR"</span>)
+<span class='fu'>set.groundhog.folder</span>(<span class='st'>"~/.groundhog"</span>)
 }
 </div></pre>
   </div>
