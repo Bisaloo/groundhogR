@@ -124,7 +124,7 @@
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="co">####   Written in R Version 3.6.1 - ####</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://groundhogr.com">"groundhogR"</a></span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"groundhogR"</span>)
 
 <span class="kw">groundhog.date</span> <span class="op">&lt;-</span> <span class="st">"2019-04-21"</span>
 <span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, date = <span class="kw">groundhog.day</span>)
@@ -139,14 +139,14 @@
 <p>The whole reason for groundhogR to exist is that packages change over time in ways that make old scripts not work. A likely use of groundhogR is thus to revive old scripts that no longer work.</p>
 <p>To recover a non-working script replace its <code>library()</code> statements, with <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code> ones, trying older dates until the script works again.</p>
 <p>You can start setting the date to the date when the script you are reviving was last saved. If that does not work, roll back the clock further (and possibly separately for each package in the script).</p>
-<p>This process is facilitated by knowing when a package had a version change. Use <code><a href="https://rdrr.io/pkg/groundhogR/man/toc.html">groundhogR::toc()</a></code> to get the table of contents, like this:</p>
+<p>This process is facilitated by knowing when a package had a version change. Use <code>groundhogR::toc()</code> to get the table of contents, like this:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">groundhogR</span>::<span class="fu"><a href="https://rdrr.io/pkg/groundhogR/man/toc.html">toc</a></span>(<span class="st">"rio"</span>)
-<span class="kw">groundhogR</span>::<span class="fu"><a href="https://rdrr.io/pkg/groundhogR/man/toc.html">toc</a></span>(<span class="st">"pwr"</span>)
+<span class="kw">groundhogR</span>::<span class="fu">toc</span>(<span class="st">"rio"</span>)
+<span class="kw">groundhogR</span>::<span class="fu">toc</span>(<span class="st">"pwr"</span>)
 </pre></div>
 <p>To get a single set with all relevant changes worth trying:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw">groundhogR</span>::<span class="fu"><a href="https://rdrr.io/pkg/groundhogR/man/cross.toc.html">cross.toc</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span>))
+<span class="kw">groundhogR</span>::<span class="fu">cross.toc</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span>))
 </pre></div>
 </div>
 <div id="use-3-document-changes-in-packages" class="section level2">
