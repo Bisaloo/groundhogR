@@ -84,9 +84,9 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="groundhogr" class="section level1">
+<div id="groundhog" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#groundhogr" class="anchor"></a>groundhogR</h1></div>
+<a href="#groundhog" class="anchor"></a>groundhog</h1></div>
 <!-- badges: start -->
 
 <div id="installation" class="section level2">
@@ -113,8 +113,8 @@
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="kw">dplyr</span>::<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) 
 </pre></div>
-<p>The problem is that in June 2016, the function <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>dplyr::distinct()</code></a> was modified in a non backwards-compatible way. Up to that date it would keep all variables but, afterward the SAME function drops all other variables, The same line of code, run in the same computer, on the same date, has one effect before june 2016 vs after.</p>
-<p>With groundhogR the script tells us which version of dplyr to use keeping the same results:</p>
+<p>The problem is that in June 2016, the function <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>dplyr::distinct()</code></a> was modified in a non backwards-compatible way. Up to that date it would keep all variables but, afterward the SAME function drops all other variables, The same line of code, run in the same computer, has one effect before updating {dplyr} vs after.</p>
+<p>With groundhog the script tells us which version of dplyr to use keeping the same results:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://groundhogr.com">groundhog</a></span>)
 <span class="co"># if before the change, then both variables are kept</span>
