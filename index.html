@@ -95,8 +95,7 @@
 <p>groundhogR has not yet been released on CRAN and must be installed from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="co"># install.packages("remotes")</span>
-<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"groundhogR/groundhog"</span>)
-</pre></div>
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"groundhogR/groundhog"</span>)</pre></div>
 </div>
 <div id="example-1---recovering-broken-code-with-backwards-incompatible-change-in-dplyr" class="section level2">
 <h2 class="hasAnchor">
@@ -107,29 +106,24 @@
 <span class="kw">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
   x1 = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>),
   x2 = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
-)
-</pre></div>
+)</pre></div>
 <p>To drop repeated rows you can use the package dplyr and run:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">dplyr</span>::<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) 
-</pre></div>
+<span class="kw">dplyr</span>::<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) </pre></div>
 <p>The problem is that in June 2016, the function <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>dplyr::distinct()</code></a> was modified in a non backwards-compatible way. Up to that date it would keep all variables but, afterward the SAME function drops all other variables, The same line of code, run in the same computer, has one effect before updating {dplyr} vs after.</p>
 <p>With groundhog the script tells us which version of dplyr to use keeping the same results:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://groundhogr.com">groundhog</a></span>)
 <span class="co"># if before the change, then both variables are kept</span>
-<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>, date = <span class="st">"2016-06-22"</span>)
-</pre></div>
+<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>, date = <span class="st">"2016-06-22"</span>)</pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) 
-</pre></div>
+<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) </pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="co"># if after the change, only x1 is kept</span>
 <span class="co">#Now as it was two days after </span>
 <span class="co">#IMPORTANT: since another version of dplyr is loaded, we do CTRL-SHIFT-F10 to restart the R Session and load the newer version</span>
 <span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>,date = <span class="st">"2016-06-26"</span>)
-<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) 
-</pre></div>
+<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) </pre></div>
 </div>
 </div>
   </div>

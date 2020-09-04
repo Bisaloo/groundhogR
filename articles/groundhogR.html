@@ -102,16 +102,13 @@
 <p>groundhogR allows having multiple (possibly all) versions of a package available, and loading whichever one is wanted. For an older project you work with an older version of a package to ensure reproducibility, while for a new project you work with a newer version.</p>
 <p>For example, to work with the package rio as it was available on 2017-09-15 instead of</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rio"</span>)
-</pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rio"</span>)</pre></div>
 <p>you run</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2017-09-15"</span>)
-</pre></div>
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2017-09-15"</span>)</pre></div>
 <p>Even on the same script (<code>.R</code> file) you can switch which version you use, like this:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2019-01-27"</span>)
-</pre></div>
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2019-01-27"</span>)</pre></div>
 </div>
 <div id="recommended-uses" class="section level1">
 <h1 class="hasAnchor">
@@ -130,8 +127,7 @@
 <span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, date = <span class="kw">groundhog.day</span>)
 <span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"pwr"</span>, date = <span class="kw">groundhog.day</span>)
 
-<span class="co"># &lt;your code&gt;</span>
-</pre></div>
+<span class="co"># &lt;your code&gt;</span></pre></div>
 </div>
 <div id="use-2-revive-existing-scripts" class="section level2">
 <h2 class="hasAnchor">
@@ -142,12 +138,10 @@
 <p>This process is facilitated by knowing when a package had a version change. Use <code>groundhogR::toc()</code> to get the table of contents, like this:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
 <span class="kw">groundhogR</span>::<span class="fu">toc</span>(<span class="st">"rio"</span>)
-<span class="kw">groundhogR</span>::<span class="fu">toc</span>(<span class="st">"pwr"</span>)
-</pre></div>
+<span class="kw">groundhogR</span>::<span class="fu">toc</span>(<span class="st">"pwr"</span>)</pre></div>
 <p>To get a single set with all relevant changes worth trying:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw">groundhogR</span>::<span class="fu">cross.toc</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span>))
-</pre></div>
+<span class="kw">groundhogR</span>::<span class="fu">cross.toc</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span>))</pre></div>
 </div>
 <div id="use-3-document-changes-in-packages" class="section level2">
 <h2 class="hasAnchor">
