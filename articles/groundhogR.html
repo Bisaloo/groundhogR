@@ -92,8 +92,8 @@
 <div id="front-end-overview" class="section level1">
 <h1 class="hasAnchor">
 <a href="#front-end-overview" class="anchor"></a>Front-end overview</h1>
-<p>The function <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code> substitutes the functions: <code>library()</code> and <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>.</p>
-<p>In contrast to <code>library()</code>, with <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code></p>
+<p>The function <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code> substitutes the functions: <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> and <code><a href="https://rdrr.io/r/utils/install.packages.html">install.packages()</a></code>.</p>
+<p>In contrast to <code><a href="https://rdrr.io/r/base/library.html">library()</a></code>, with <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code></p>
 <ul>
 <li>A date must be included within the <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code> command</li>
 <li>The version of the package available on that day, is automatically installed if needed</li>
@@ -133,7 +133,7 @@
 <h2 class="hasAnchor">
 <a href="#use-2-revive-existing-scripts" class="anchor"></a>USE 2: Revive existing scripts</h2>
 <p>The whole reason for groundhogR to exist is that packages change over time in ways that make old scripts not work. A likely use of groundhogR is thus to revive old scripts that no longer work.</p>
-<p>To recover a non-working script replace its <code>library()</code> statements, with <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code> ones, trying older dates until the script works again.</p>
+<p>To recover a non-working script replace its <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> statements, with <code><a href="../reference/groundhog.library.html">groundhog.library()</a></code> ones, trying older dates until the script works again.</p>
 <p>You can start setting the date to the date when the script you are reviving was last saved. If that does not work, roll back the clock further (and possibly separately for each package in the script).</p>
 <p>This process is facilitated by knowing when a package had a version change. Use <code>groundhogR::toc()</code> to get the table of contents, like this:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
@@ -180,7 +180,7 @@ C:\Users\mike\Documents\groundhogR\R-3.6.2\rio_0.5.1</code></pre>
 <div id="dynamic-search-path" class="section level2">
 <h2 class="hasAnchor">
 <a href="#dynamic-search-path" class="anchor"></a>Dynamic search path</h2>
-<p>The <code>library()</code> command in R uses the <code><a href="https://rdrr.io/r/base/libPaths.html">.libPaths()</a></code> path to search for installed packages. That path is stable for all <code>library()</code> calls (but can be modified by users).</p>
+<p>The <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> command in R uses the <code><a href="https://rdrr.io/r/base/libPaths.html">.libPaths()</a></code> path to search for installed packages. That path is stable for all <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> calls (but can be modified by users).</p>
 <p><code><a href="../reference/groundhog.library.html">groundhog.library()</a></code>, in contrast, uses changes the searchpath for every call, so as to find the right version of the package for the date indicated, and R version being used.</p>
 <p>For instance, <code><a href="../reference/groundhog.library.html">groundhog.library("rio", "2017-10-11")</a></code> will find the version of rio for that, date, and all the dependencies for rio for that date, and add the path to each specific needed version to the search path, so that R uses the corresponding version</p>
 </div>
@@ -243,7 +243,7 @@ C:\Users\mike\Documents\groundhogR\R-3.6.2\rio_0.5.1</code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.0.9000.</p>
 </div>
 
       </footer>
