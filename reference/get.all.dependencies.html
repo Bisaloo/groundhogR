@@ -163,7 +163,26 @@ package in column <code>pkg</code>.</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
 <span class='kw'>groundhog</span>:::<span class='fu'>get.all.dependencies</span>(<span class='st'>"magrittr"</span>, <span class='st'>"2018-02-12"</span>, include.suggests = <span class='fl'>TRUE</span>)
-</div><div class='output co'>#&gt; <span class='error'>Error in get.dependencies(pkg, date, include.suggests = include.suggests): object 'cran.toc' not found</span></div><div class='input'><span class='co'># }</span>
+</div><div class='output co'>#&gt;         pkg       dep2
+#&gt; 1  magrittr   testthat
+#&gt; 2  magrittr      knitr
+#&gt; 3  testthat        cli
+#&gt; 4  testthat     crayon
+#&gt; 5  testthat     digest
+#&gt; 6  testthat     praise
+#&gt; 7  testthat         R6
+#&gt; 8  testthat      rlang
+#&gt; 9  testthat      withr
+#&gt; 10    knitr   evaluate
+#&gt; 11    knitr      highr
+#&gt; 12    knitr   markdown
+#&gt; 13    knitr    stringr
+#&gt; 14    knitr       yaml
+#&gt; 15      cli assertthat
+#&gt; 16      cli     crayon
+#&gt; 17 evaluate    stringr
+#&gt; 18 markdown       mime
+#&gt; 19  stringr    stringi</div><div class='input'><span class='co'># }</span>
 
 </div></pre>
   </div>
