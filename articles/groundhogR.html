@@ -38,12 +38,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -61,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/groundhogR/groundhogR/">
+  <a href="https://github.com/CredibilityLab/groundhog/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -82,7 +76,7 @@
       <h1 data-toc-skip>groundhogR</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/groundhogR/groundhogR/blob/master/vignettes/groundhogR.Rmd"><code>vignettes/groundhogR.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/CredibilityLab/groundhog/blob/master/vignettes/groundhogR.Rmd"><code>vignettes/groundhogR.Rmd</code></a></small>
       <div class="hidden name"><code>groundhogR.Rmd</code></div>
 
     </div>
@@ -102,13 +96,13 @@
 <p>groundhogR allows having multiple (possibly all) versions of a package available, and loading whichever one is wanted. For an older project you work with an older version of a package to ensure reproducibility, while for a new project you work with a newer version.</p>
 <p>For example, to work with the package rio as it was available on 2017-09-15 instead of</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rio"</span>)</pre></div>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"rio"</span><span class="op">)</span></pre></div>
 <p>you run</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2017-09-15"</span>)</pre></div>
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span><span class="op">(</span><span class="st">"rio"</span>, <span class="st">"2017-09-15"</span><span class="op">)</span></pre></div>
 <p>Even on the same script (<code>.R</code> file) you can switch which version you use, like this:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, <span class="st">"2019-01-27"</span>)</pre></div>
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span><span class="op">(</span><span class="st">"rio"</span>, <span class="st">"2019-01-27"</span><span class="op">)</span></pre></div>
 </div>
 <div id="recommended-uses" class="section level1">
 <h1 class="hasAnchor">
@@ -121,11 +115,11 @@
 <div class="sourceCode" id="cb4"><pre class="downlit">
 <span class="co">####   Written in R Version 3.6.1 - ####</span>
 
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"groundhogR"</span>)
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st">"groundhogR"</span><span class="op">)</span>
 
-<span class="kw">groundhog.date</span> <span class="op">&lt;-</span> <span class="st">"2019-04-21"</span>
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"rio"</span>, date = <span class="kw">groundhog.day</span>)
-<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"pwr"</span>, date = <span class="kw">groundhog.day</span>)
+<span class="va">groundhog.date</span> <span class="op">&lt;-</span> <span class="st">"2019-04-21"</span>
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span><span class="op">(</span><span class="st">"rio"</span>, date <span class="op">=</span> <span class="va">groundhog.day</span><span class="op">)</span>
+<span class="fu"><a href="../reference/groundhog.library.html">groundhog.library</a></span><span class="op">(</span><span class="st">"pwr"</span>, date <span class="op">=</span> <span class="va">groundhog.day</span><span class="op">)</span>
 
 <span class="co"># &lt;your code&gt;</span></pre></div>
 </div>
@@ -137,11 +131,11 @@
 <p>You can start setting the date to the date when the script you are reviving was last saved. If that does not work, roll back the clock further (and possibly separately for each package in the script).</p>
 <p>This process is facilitated by knowing when a package had a version change. Use <code>groundhogR::toc()</code> to get the table of contents, like this:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw">groundhogR</span>::<span class="fu">toc</span>(<span class="st">"rio"</span>)
-<span class="kw">groundhogR</span>::<span class="fu">toc</span>(<span class="st">"pwr"</span>)</pre></div>
+<span class="fu">groundhogR</span><span class="fu">::</span><span class="fu">toc</span><span class="op">(</span><span class="st">"rio"</span><span class="op">)</span>
+<span class="fu">groundhogR</span><span class="fu">::</span><span class="fu">toc</span><span class="op">(</span><span class="st">"pwr"</span><span class="op">)</span></pre></div>
 <p>To get a single set with all relevant changes worth trying:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw">groundhogR</span>::<span class="fu">cross.toc</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span>))</pre></div>
+<span class="fu">groundhogR</span><span class="fu">::</span><span class="fu">cross.toc</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"rio"</span>, <span class="st">"pwr"</span>, <span class="st">"R"</span><span class="op">)</span><span class="op">)</span></pre></div>
 </div>
 <div id="use-3-document-changes-in-packages" class="section level2">
 <h2 class="hasAnchor">

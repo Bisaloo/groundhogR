@@ -44,12 +44,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -67,7 +61,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/groundhogR/groundhogR/">
+  <a href="https://github.com/CredibilityLab/groundhog/">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -92,10 +86,10 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>groundhogR has not yet been released on CRAN and must be installed from GitHub:</p>
+<p>groundhog has not yet been released on CRAN and must be installed from GitHub:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit">
 <span class="co"># install.packages("remotes")</span>
-<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"groundhogR/groundhog"</span>)</pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"CredibilityLab/groundhog"</span><span class="op">)</span></pre></div>
 </div>
 <div id="example-1---recovering-broken-code-with-backwards-incompatible-change-in-dplyr" class="section level2">
 <h2 class="hasAnchor">
@@ -103,27 +97,27 @@
 <p>With version 0.5, <a href="https://dplyr.tidyverse.org/">dplyr</a> changed how the <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>distinct</code></a> function worked, leading to dropped variables:</p>
 <p>Say you have data with repeat values of <code>x</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(
-  x1 = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span>),
-  x2 = <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>)
-)</pre></div>
+<span class="va">df1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>
+  x1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>,
+  x2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span><span class="op">)</span>
+<span class="op">)</span></pre></div>
 <p>To drop repeated rows you can use the package dplyr and run:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw">dplyr</span>::<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) </pre></div>
-<p>The problem is that in June 2016, the function <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>dplyr::distinct()</code></a> was modified in a non backwards-compatible way. Up to that date it would keep all variables but, afterward the SAME function drops all other variables, The same line of code, run in the same computer, has one effect before updating {dplyr} vs after.</p>
-<p>With groundhog the script tells us which version of dplyr to use keeping the same results:</p>
+<span class="fu">dplyr</span><span class="fu">::</span><span class="fu">distinct</span><span class="op">(</span><span class="va">df1</span>, <span class="va">x1</span><span class="op">)</span> </pre></div>
+<p>The problem is that in June 2016, the function <a href="https://dplyr.tidyverse.org/reference/distinct.html"><code>dplyr::distinct()</code></a> was modified in a non backwards-compatible way. Up to that date it would keep all variables but, afterward the SAME function drops all other variables, The same line of code, run in the same computer, on the same date, has one effect before june 2016 vs after.</p>
+<p>With groundhogR the script tells us which version of dplyr to use keeping the same results:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="kw"><a href="https://groundhogr.com">groundhog</a></span>)
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://groundhogr.com/">groundhog</a></span><span class="op">)</span>
 <span class="co"># if before the change, then both variables are kept</span>
-<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>, date = <span class="st">"2016-06-22"</span>)</pre></div>
+<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span><span class="op">(</span><span class="st">"dplyr"</span>, date <span class="op">=</span> <span class="st">"2016-06-22"</span><span class="op">)</span></pre></div>
 <div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) </pre></div>
+<span class="fu">distinct</span><span class="op">(</span><span class="va">df1</span>, <span class="va">x1</span><span class="op">)</span> </pre></div>
 <div class="sourceCode" id="cb6"><pre class="downlit">
 <span class="co"># if after the change, only x1 is kept</span>
 <span class="co">#Now as it was two days after </span>
 <span class="co">#IMPORTANT: since another version of dplyr is loaded, we do CTRL-SHIFT-F10 to restart the R Session and load the newer version</span>
-<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span>(<span class="st">"dplyr"</span>,date = <span class="st">"2016-06-26"</span>)
-<span class="fu">distinct</span>(<span class="kw">df1</span>, <span class="kw">x1</span>) </pre></div>
+<span class="fu"><a href="reference/groundhog.library.html">groundhog.library</a></span><span class="op">(</span><span class="st">"dplyr"</span>,date <span class="op">=</span> <span class="st">"2016-06-26"</span><span class="op">)</span>
+<span class="fu">distinct</span><span class="op">(</span><span class="va">df1</span>, <span class="va">x1</span><span class="op">)</span> </pre></div>
 </div>
 </div>
   </div>
@@ -132,9 +126,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/groundhogR/groundhogR/">https://​github.com/​groundhogR/​groundhogR/​</a>
+<li>Browse source code at <br><a href="https://github.com/CredibilityLab/groundhog/">https://​github.com/​CredibilityLab/​groundhog/​</a>
 </li>
-<li>Report a bug at <br><a href="https://groundhogR.com/bugs">https://​groundhogR.com/​bugs</a>
+<li>Report a bug at <br><a href="https://github.com/CredibilityLab/groundhog/issues">https://​github.com/​CredibilityLab/​groundhog/​issues</a>
 </li>
 </ul>
 </div>
@@ -157,8 +151,8 @@
   <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/groundhogR/groundhog/actions"><img src="https://github.com/groundhogR/groundhog/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/gh/groundhogR/groundhog?branch=master"><img src="https://codecov.io/gh/groundhogR/groundhog/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/CredibilityLab/groundhog/actions"><img src="https://github.com/CredibilityLab/groundhog/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://codecov.io/gh/CredibilityLab/groundhog?branch=master"><img src="https://codecov.io/gh/CredibilityLab/groundhog/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 </div>
