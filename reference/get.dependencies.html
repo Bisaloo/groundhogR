@@ -122,7 +122,7 @@ given date." />
 given <code>date</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get.dependencies</span><span class='op'>(</span><span class='va'>pkg</span>, <span class='va'>date</span>, include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get.dependencies</span><span class='op'>(</span><span class='va'>pkg</span>, <span class='va'>date</span>, include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span>, drop.non.cran <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -139,6 +139,12 @@ given <code>date</code>.</p>
       <th>include.suggests</th>
       <td><p>Logical (defaults to <code>FALSE</code>. Should suggested
 packages be installed?</p></td>
+    </tr>
+    <tr>
+      <th>drop.non.cran</th>
+      <td><p>(defaults to <code>TRUE</code>. Should installation of
+dependencies that are not found in cran.toc.rds (i.e., not in CRAN) be
+attempted?</p></td>
     </tr>
     </table>
 
