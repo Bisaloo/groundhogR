@@ -4,3 +4,10 @@ Suggests: covr, testthat (>= 2.1.0), knitr, rmarkdown
 License: GPL-3
 MD5sum: a4ddfd7b4a888d4a88aad3caa5bad25b
 NeedsCompilation: no
+
+Package: groundhog
+Version: 1.0.1
+Suggests: covr, testthat (>= 2.1.0), knitr, rmarkdown
+License: GPL-3
+MD5sum: f9ddc6e054a54af86ceb22cbd640b9a7
+NeedsCompilation: no
