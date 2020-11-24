@@ -3,7 +3,7 @@ pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
   groundhog: groundhog.html
-last_built: 2020-11-24T12:33Z
+last_built: 2020-11-24T12:39Z
 urls:
   reference: https://groundhogr.github.io/groundhog/reference
   article: https://groundhogr.github.io/groundhog/articles
