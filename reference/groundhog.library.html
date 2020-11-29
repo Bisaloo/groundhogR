@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">groundhog</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.4</span>
       </span>
     </div>
 
@@ -125,8 +125,7 @@
   <span class='va'>date</span>,
   quiet.install <span class='op'>=</span> <span class='cn'>TRUE</span>,
   include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  current.deps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Rcpp"</span>, <span class='st'>"RcppArmadillo"</span>, <span class='st'>"BH"</span>, <span class='st'>"RcppEigen"</span>, <span class='st'>"StanHeaders"</span>,
-    <span class='st'>"RcppParallel"</span>, <span class='st'>"RcppProgress"</span><span class='op'>)</span>,
+  current.deps <span class='op'>=</span> <span class='va'>.pkgenv</span><span class='op'>$</span><span class='va'>current.deps</span>,
   ignore.package.conflicts <span class='op'>=</span> <span class='cn'>FALSE</span>,
   force.source <span class='op'>=</span> <span class='cn'>FALSE</span>,
   force.install <span class='op'>=</span> <span class='cn'>FALSE</span>
@@ -136,10 +135,6 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>pkg</th>
-      <td><p>character. Name of the package to install</p></td>
-    </tr>
-    <tr>
       <th>date</th>
       <td><p>date (in the format "%Y-%m-%d"), Required date for the package.</p></td>
     </tr>
@@ -147,17 +142,6 @@
       <th>quiet.install</th>
       <td><p>Logical (defaults to <code>TRUE</code>).Run <code><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages()</a></code>
 with <code>quiet = TRUE</code>?</p></td>
-    </tr>
-    <tr>
-      <th>include.suggests</th>
-      <td><p>Logical (defaults to <code>FALSE</code>. Should suggested
-packages be installed?</p></td>
-    </tr>
-    <tr>
-      <th>current.deps</th>
-      <td><p>Character or character vector listing packages that will
-be loaded/installed based on the date when the version of <span style="R">R</span> being used was
-released, rather than the value of <code>date</code>.</p></td>
     </tr>
     <tr>
       <th>ignore.package.conflicts</th>

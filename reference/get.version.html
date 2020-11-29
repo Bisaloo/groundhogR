@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">groundhog</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.4</span>
       </span>
     </div>
 
@@ -123,8 +123,7 @@
     <pre class="usage"><span class='fu'>get.version</span><span class='op'>(</span>
   <span class='va'>pkg</span>,
   <span class='va'>date</span>,
-  current.deps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Rcpp"</span>, <span class='st'>"RcppArmadillo"</span>, <span class='st'>"BH"</span>, <span class='st'>"RcppEigen"</span>, <span class='st'>"StanHeaders"</span>,
-    <span class='st'>"RcppParallel"</span>, <span class='st'>"RcppProgress"</span><span class='op'>)</span>,
+  current.deps <span class='op'>=</span> <span class='va'>.pkgenv</span><span class='op'>$</span><span class='va'>current.deps</span>,
   patch <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"current"</span>, <span class='st'>"max"</span><span class='op'>)</span>
 <span class='op'>)</span></pre>
 
