@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">groundhog</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.0</span>
       </span>
     </div>
 
@@ -126,6 +126,7 @@
   quiet.install <span class='op'>=</span> <span class='cn'>TRUE</span>,
   include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span>,
   current.deps <span class='op'>=</span> <span class='va'>.pkgenv</span><span class='op'>$</span><span class='va'>current.deps</span>,
+  ignore.deps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>,
   ignore.package.conflicts <span class='op'>=</span> <span class='cn'>FALSE</span>,
   force.source <span class='op'>=</span> <span class='cn'>FALSE</span>,
   force.install <span class='op'>=</span> <span class='cn'>FALSE</span>
@@ -144,11 +145,11 @@
 with <code>quiet = TRUE</code>?</p></td>
     </tr>
     <tr>
-      <th>ignore.package.conflicts</th>
-      <td><p>Logical (defaults to <code>FALSE</code>). With <code>TRUE</code>,
-if an already attached package will be installed, it is detached, but all
-dependencies are left installed. With default, <code>FALSE</code>, script stops and
-asks for session restart.</p></td>
+      <th>ignore.deps</th>
+      <td><p>optional character vector containing dependencies which
+may mismatch those implied by the entered date and be tolerated. This will
+prevent the installation to stop and request restarting the R session for
+specified dependencies.</p></td>
     </tr>
     <tr>
       <th>force.source</th>
