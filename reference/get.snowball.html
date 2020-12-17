@@ -122,7 +122,7 @@
   <span class='va'>date</span>,
   include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span>,
   force.source <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  current.deps <span class='op'>=</span> <span class='va'>.pkgenv</span><span class='op'>$</span><span class='va'>current.deps</span>
+  current.deps <span class='op'>=</span> <span class='fu'>default.current.deps</span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -154,7 +154,7 @@ installing binary from CRAN or MRAN and instead download source file and install
 installed with the newest version between the requested date the release of the
 version of R being used, instead of necessarily with the version implied by the
 date. Default includes series of C++ related packages which tend to be incompatible
-across R versions.</p></td>
+across R versions (to see the set of packages run 'groundhog:::get.current.deps()')</p></td>
     </tr>
     </table>
 
