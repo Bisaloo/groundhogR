@@ -80,12 +80,9 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
-</li>
-<li>
-  <a href="../articles/groundhog.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -94,7 +91,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/CredibilityLab/groundhog/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -131,12 +128,20 @@
     </tr>
     <tr>
       <th>force.install</th>
-      <td><p>Logical (defaults to <code>FALSE</code>). If <code>TRUE</code>, even if
-package is found for this R-build, it will reinstall it.</p></td>
+      <td><p>Logical (defaults to <code>FALSE</code>). If <code>TRUE</code>,` will deleted
+existing package files in groundhog folder, and install anew.</p></td>
+    </tr>
+    <tr>
+      <th>ignore.deps</th>
+      <td><p>optional character vector containing dependencies which
+may mismatch those implied by the entered date and be tolerated. This will
+prevent the installation to stop and request restarting the R session for
+specified dependencies.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>date (in the format "%Y-%m-%d"), Required date for the package.</p></td>
+      <td><p>character string, or date value, with the date which determines the
+version of the package, and all dependencies, to be installed. It's in yyyy-mm-dd format.</p></td>
     </tr>
     </table>
 
@@ -152,7 +157,7 @@ package is found for this R-build, it will reinstall it.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Uri Simonsohn, <a href='https://normalesup.org/~hgruson'>Hugo Gruson</a>.</p>
+  <p>Developed by Uri Simonsohn, Hugo Gruson.</p>
 </div>
 
 <div class="pkgdown">

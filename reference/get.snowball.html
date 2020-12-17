@@ -80,12 +80,9 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
-</li>
-<li>
-  <a href="../articles/groundhog.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -94,7 +91,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/CredibilityLab/groundhog/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -125,7 +122,7 @@
   <span class='va'>date</span>,
   include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span>,
   force.source <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  current.deps <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>)</span>
+  current.deps <span class='op'>=</span> <span class='va'>.pkgenv</span><span class='op'>$</span><span class='va'>current.deps</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -133,27 +130,31 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg</th>
-      <td><p>character. Name of the package to install</p></td>
+      <td><p>character string with name of target package to install,
+need not be in quotes.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>date (in the format "%Y-%m-%d"), Required date for the package.</p></td>
+      <td><p>character string, or date value, with the date which determines the
+version of the package, and all dependencies, to be installed. It's in yyyy-mm-dd format.</p></td>
     </tr>
     <tr>
       <th>include.suggests</th>
-      <td><p>Logical (defaults to <code>FALSE</code>. Should suggested
-packages be installed?</p></td>
+      <td><p>logical, defaults to FALSE, when set to TRUE installs/
+loads dependencies classified in the DESCRIPTION file as suggested.</p></td>
     </tr>
     <tr>
       <th>force.source</th>
-      <td><p>Logical (defaults to <code>FALSE</code>). If <code>TRUE</code>,` will skip CRAN
-and MRAN attempts, download tar.gz, and install from it.</p></td>
+      <td><p>Logical (defaults to <code>FALSE</code>). If <code>TRUE</code>,` will not attempt
+installing binary from CRAN or MRAN and instead download source file and install it.</p></td>
     </tr>
     <tr>
       <th>current.deps</th>
-      <td><p>Character or character vector listing packages that will
-be loaded/installed based on the date when the version of <span style="R">R</span> being used was
-released, rather than the value of <code>date</code>.</p></td>
+      <td><p>character vector with dependencies that, if needed, will be
+installed with the newest version between the requested date the release of the
+version of R being used, instead of necessarily with the version implied by the
+date. Default includes series of C++ related packages which tend to be incompatible
+across R versions.</p></td>
     </tr>
     </table>
 
@@ -169,7 +170,7 @@ released, rather than the value of <code>date</code>.</p></td>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Uri Simonsohn, <a href='https://normalesup.org/~hgruson'>Hugo Gruson</a>.</p>
+  <p>Developed by Uri Simonsohn, Hugo Gruson.</p>
 </div>
 
 <div class="pkgdown">

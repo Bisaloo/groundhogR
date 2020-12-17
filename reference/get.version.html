@@ -80,12 +80,9 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
-</li>
-<li>
-  <a href="../articles/groundhog.html">Get started</a>
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
@@ -94,7 +91,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/CredibilityLab/groundhog/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -132,17 +129,21 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg</th>
-      <td><p>character. Name of the package to install</p></td>
+      <td><p>character string with name of target package to install,
+need not be in quotes.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>date (in the format "%Y-%m-%d"), Required date for the package.</p></td>
+      <td><p>character string, or date value, with the date which determines the
+version of the package, and all dependencies, to be installed. It's in yyyy-mm-dd format.</p></td>
     </tr>
     <tr>
       <th>current.deps</th>
-      <td><p>Character or character vector listing packages that will
-be loaded/installed based on the date when the version of <span style="R">R</span> being used was
-released, rather than the value of <code>date</code>.</p></td>
+      <td><p>character vector with dependencies that, if needed, will be
+installed with the newest version between the requested date the release of the
+version of R being used, instead of necessarily with the version implied by the
+date. Default includes series of C++ related packages which tend to be incompatible
+across R versions.</p></td>
     </tr>
     <tr>
       <th>patch</th>
@@ -168,7 +169,7 @@ for a given version.</p></div>
 
       <footer>
       <div class="copyright">
-  <p>Developed by Uri Simonsohn, <a href='https://normalesup.org/~hgruson'>Hugo Gruson</a>.</p>
+  <p>Developed by Uri Simonsohn, Hugo Gruson.</p>
 </div>
 
 <div class="pkgdown">
