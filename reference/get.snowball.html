@@ -117,44 +117,30 @@
     <p>Generates dataframe with all dependencies needed to install a package, with version and source of installation</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get.snowball</span><span class='op'>(</span>
-  <span class='va'>pkg</span>,
-  <span class='va'>date</span>,
-  include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  force.source <span class='op'>=</span> <span class='cn'>FALSE</span>,
-  current.deps <span class='op'>=</span> <span class='fu'>default.current.deps</span><span class='op'>(</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get.snowball</span><span class='op'>(</span><span class='va'>pkg</span>, <span class='va'>date</span>, include.suggests <span class='op'>=</span> <span class='cn'>FALSE</span>, force.source <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg</th>
-      <td><p>character string with name of target package to install,
+      <td><p>character string with name of target package to load (and install if needed),
 need not be in quotes.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>character string, or date value, with the date which determines the
-version of the package, and all dependencies, to be installed. It's in yyyy-mm-dd format.</p></td>
+      <td><p>character string  (yyyy-mm-dd), or date value, with the date which determines the
+version of the package, and all dependencies, to be loaded (and installed if needed).</p></td>
     </tr>
     <tr>
       <th>include.suggests</th>
-      <td><p>logical, defaults to FALSE, when set to TRUE installs/
-loads dependencies classified in the DESCRIPTION file as suggested.</p></td>
+      <td><p>logical, defaults to <code>FALSE</code>. When set to <code>TRUE</code>, installs/
+loads dependencies classified in the DESCRIPTION file as <code>suggested</code>.</p></td>
     </tr>
     <tr>
       <th>force.source</th>
-      <td><p>Logical (defaults to <code>FALSE</code>). If <code>TRUE</code>,` will not attempt
+      <td><p>logical (defaults to <code>FALSE</code>). When set to <code>TRUE</code>, will not attempt
 installing binary from CRAN or MRAN and instead download source file and install it.</p></td>
-    </tr>
-    <tr>
-      <th>current.deps</th>
-      <td><p>character vector with dependencies that, if needed, will be
-installed with the newest version between the requested date the release of the
-version of R being used, instead of necessarily with the version implied by the
-date. Default includes series of C++ related packages which tend to be incompatible
-across R versions (to see the set of packages run 'groundhog:::default.current.deps()')</p></td>
     </tr>
     </table>
 

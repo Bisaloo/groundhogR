@@ -117,33 +117,20 @@
     <p>Get version from date</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get.version</span><span class='op'>(</span>
-  <span class='va'>pkg</span>,
-  <span class='va'>date</span>,
-  current.deps <span class='op'>=</span> <span class='va'>.pkgenv</span><span class='op'>$</span><span class='va'>current.deps</span>,
-  patch <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"current"</span>, <span class='st'>"max"</span><span class='op'>)</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>get.version</span><span class='op'>(</span><span class='va'>pkg</span>, <span class='va'>date</span>, patch <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"current"</span>, <span class='st'>"max"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>pkg</th>
-      <td><p>character string with name of target package to install,
+      <td><p>character string with name of target package to load (and install if needed),
 need not be in quotes.</p></td>
     </tr>
     <tr>
       <th>date</th>
-      <td><p>character string, or date value, with the date which determines the
-version of the package, and all dependencies, to be installed. It's in yyyy-mm-dd format.</p></td>
-    </tr>
-    <tr>
-      <th>current.deps</th>
-      <td><p>character vector with dependencies that, if needed, will be
-installed with the newest version between the requested date the release of the
-version of R being used, instead of necessarily with the version implied by the
-date. Default includes series of C++ related packages which tend to be incompatible
-across R versions (to see the set of packages run 'groundhog:::default.current.deps()')</p></td>
+      <td><p>character string  (yyyy-mm-dd), or date value, with the date which determines the
+version of the package, and all dependencies, to be loaded (and installed if needed).</p></td>
     </tr>
     <tr>
       <th>patch</th>
@@ -153,6 +140,10 @@ minor but maximal patch version numbers.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>most recent package version available on requested date (if source
+and binary package versions do not match, the most recent of the two versions is returned.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='get.R.pkg.date.html'>get.R.pkg.date()</a></code> for the opposite operation: determining date
