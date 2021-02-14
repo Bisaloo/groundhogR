@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Show table of contents (toc) (package versions and publication dates) for a
-package, sorted chronologically — toc • groundhog</title>
+<title>Show CRAN publication dates for all versions of a given package — toc • groundhog</title>
 
 
 <!-- jquery -->
@@ -40,10 +39,8 @@ package, sorted chronologically — toc • groundhog</title>
 
 
 
-<meta property="og:title" content="Show table of contents (toc) (package versions and publication dates) for a
-package, sorted chronologically — toc" />
-<meta property="og:description" content="Show table of contents (toc) (package versions and publication dates) for a
-package, sorted chronologically" />
+<meta property="og:title" content="Show CRAN publication dates for all versions of a given package — toc" />
+<meta property="og:description" content="Show CRAN publication dates for all versions of a given package" />
 
 
 
@@ -75,7 +72,7 @@ package, sorted chronologically" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">groundhog</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0.9020</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.3.0.9105</span>
       </span>
     </div>
 
@@ -111,15 +108,13 @@ package, sorted chronologically" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Show table of contents (toc) (package versions and publication dates) for a
-package, sorted chronologically</h1>
+    <h1>Show CRAN publication dates for all versions of a given package</h1>
     <small class="dont-index">Source: <a href='https://github.com/CredibilityLab/groundhog/blob/master/R/toc.R'><code>R/toc.R</code></a></small>
     <div class="hidden name"><code>toc.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Show table of contents (toc) (package versions and publication dates) for a
-package, sorted chronologically</p>
+    <p>Show CRAN publication dates for all versions of a given package</p>
     </div>
 
     <pre class="usage"><span class='fu'>toc</span><span class='op'>(</span><span class='va'>pkg</span>, dependencies <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
@@ -140,12 +135,14 @@ package dependencies (<code>Imports</code>, <code>Depends</code> and <code>Sugge
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a <code>data.frame</code> where each row corresponds to one version of <code>pkg</code>.</p>
+    <p>a <code>data.frame</code> where each row corresponds to one version of <code>pkg</code>, a date column contains the publication date,
+and when <code>dependecies</code>=TRUE, columns show package dependencies over time as well.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
 <span class='fu'>toc</span><span class='op'>(</span><span class='st'>"R"</span><span class='op'>)</span>
 <span class='fu'>toc</span><span class='op'>(</span><span class='st'>"magrittr"</span><span class='op'>)</span>
+<span class='fu'>toc</span><span class='op'>(</span><span class='st'>"rio"</span>,dependencies <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='op'>}</span>
 
 </div></pre>
