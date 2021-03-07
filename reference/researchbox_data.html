@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Show toc table with multiple packages — cross.toc • groundhog</title>
+<title>Get path to data directory in researchbox structure — researchbox_data • groundhog</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,20 @@
 
 
 
-<meta property="og:title" content="Show toc table with multiple packages — cross.toc" />
-<meta property="og:description" content="Show toc table with multiple packages" />
+<meta property="og:title" content="Get path to data directory in researchbox structure — researchbox_data" />
+<meta property="og:description" content="researchbox organizes files into a main folder with 5 subfolders:
+code, data, other, pre-registration, and materials. This function allows referencing the
+data folder if such structure is used, whereby the current r script is assumed to be in the code
+folder, and the data in a neighboring folder.
+For example, if locally the script is saved into
+c:/dropbox/researchbox_1821/code/script.r, then researchbox_data() will return
+c:/dropbox/researchbox_1821/data/ allowing making a dynamic reference to the data path.
+That way, when a user downloads the ResearchBox files to their folder, no matter where the that is locally,
+because subdirectories will maintain their relative position, code that uses researchbox_data() to set the
+data path will run in the new computer without needed adjustments.
+If the user who downloaded the the files saves them into, say, &quot;d:/temp/researchbox/code/script.r&quot;
+the command researchbox_data() will output &quot;d:/temp/researchbox/data/&quot; allowing the same code to load the
+same data despite the different parental folder structure." />
 
 
 
@@ -108,48 +120,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Show toc table with multiple packages</h1>
-    <small class="dont-index">Source: <a href='https://github.com/CredibilityLab/groundhog/blob/master/R/cross.toc.R'><code>R/cross.toc.R</code></a></small>
-    <div class="hidden name"><code>cross.toc.Rd</code></div>
+    <h1>Get path to data directory in researchbox structure</h1>
+    <small class="dont-index">Source: <a href='https://github.com/CredibilityLab/groundhog/blob/master/R/researchbox_functions.R'><code>R/researchbox_functions.R</code></a></small>
+    <div class="hidden name"><code>researchbox_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Show toc table with multiple packages</p>
+    <p><a href='https://researchbox.org/'>researchbox</a> organizes files into a main folder with 5 subfolders:
+code, data, other, pre-registration, and materials. This function allows referencing the
+data folder if such structure is used, whereby the current r script is assumed to be in the code
+folder, and the data in a neighboring folder.
+For example, if locally the script is saved into
+<code>c:/dropbox/researchbox_1821/code/script.r</code>, then researchbox_data() will return
+<code>c:/dropbox/researchbox_1821/data/</code> allowing making a dynamic reference to the data path.
+That way, when a user downloads the ResearchBox files to their folder, no matter where the that is locally,
+because subdirectories will maintain their relative position, code that uses researchbox_data() to set the
+data path will run in the new computer without needed adjustments.
+If the user who downloaded the the files saves them into, say, "d:/temp/researchbox/code/script.r"
+the command <code>researchbox_data()</code> will output "d:/temp/researchbox/data/" allowing the same code to load the
+same data despite the different parental folder structure.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>cross.toc</span><span class='op'>(</span><span class='va'>pkgs</span>, date1 <span class='op'>=</span> <span class='st'>"1970-1-1"</span>, date2 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.time.html'>Sys.Date</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>researchbox_data</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>pkgs</th>
-      <td><p>character vector containing the package names.</p></td>
-    </tr>
-    <tr>
-      <th>date1, date2</th>
-      <td><p>date range to consider (in the format "%Y-%m-%d").</p></td>
-    </tr>
-    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>data.frame</code> with 3 columns:</p><dl>
-<dt>Version</dt><dd><p>The package version number</p></dd>
-<dt>Published</dt><dd><p>The date at which the specific version was published</p></dd>
-<dt>Package</dt><dd><p>The package name</p></dd>
-
-</dl>
-
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='toc.html'>toc()</a></code> for the same function for a single package.</p></div>
+    <p>Path to the <code>Data</code> folder within  <a href='https://researchbox.org/'>researchbox</a> structure</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>cross.toc</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"magrittr"</span>, <span class='st'>"R"</span><span class='op'>)</span><span class='op'>)</span>
-<span class='fu'>cross.toc</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"magrittr"</span>, <span class='st'>"rlang"</span><span class='op'>)</span>, date1 <span class='op'>=</span> <span class='st'>"2012-02-01"</span>, date2 <span class='op'>=</span> <span class='st'>"2020-02-01"</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='co'>#assign dynamically path as a sibling to current script's path</span>
+<span class='va'>data_path</span> <span class='op'>&lt;-</span> <span class='fu'>researchbox_data</span><span class='op'>(</span><span class='op'>)</span>           
+<span class='co'>#name of data file</span>
+<span class='va'>file_name</span> <span class='op'>&lt;-</span> <span class='st'>'example.csv'</span>                
+<span class='co'>#full path, dynamically generated</span>
+<span class='va'>file_path</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span><span class='op'>(</span><span class='va'>data_path</span>, <span class='va'>file_name</span><span class='op'>)</span> 
+<span class='va'>data1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span><span class='op'>(</span><span class='va'>file_path</span><span class='op'>)</span>
 <span class='op'>}</span>
 
 </div></pre>
