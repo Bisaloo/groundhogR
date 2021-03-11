@@ -81,6 +81,7 @@
 <p>CRAN contains the officially released versions.</p>
 <p>On github, here, you will find development versions which may change and could even introduce backwards incompatibilities (from one <em>un</em>released version to another). Typos and silly bugs are likely in this development version. Unless you are attempting to contribute to groundhog actively, you should stick to the CRAN version.</p>
 <p>install.packages(‘groundhog’)</p>
+<p><strong>Testing</strong> Because testing groundhog requires installing packages, restarting R sessions, evaluating multiple outcomes of an installation attempt, and artificially creating conflicts between groundhog’s library and the local library, testing is not automatized via ‘testthat’ but rather conducted via a manually run script that is executed on a Windows, Mac and Unix machine. The testing involves:(1) generating the full set of possible conflicts between local and groundhog packages (e.g., attempting to attach a different version of a package that is already loaded, vs already attached), (2) proceeding to uninstall conflicts that are discovered, (3) listing those conflicts, (4) reinstalling them, and lastly (5) installing large numbers of packages (&gt;100) in random order. You can see a version of the script used for testing at: <a href="http://groundhogr.com/test_groundhog.r" class="uri">http://groundhogr.com/test_groundhog.r</a></p>
 </div>
   </div>
 
